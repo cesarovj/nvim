@@ -27,8 +27,8 @@ keymap("n", "<CR>", "ciw", opts)
 keymap("n", "<BS>", "ci", opts)
 
 -- switch between tabs
-keymap("n", "<S-l>", "<cmd>tabn<cr>", opts)
-keymap("n", "<S-h>", "<cmd>tabp<cr>", opts)
+-- keymap("n", "<S-l>", "<cmd>tabn<cr>", opts)
+-- keymap("n", "<S-h>", "<cmd>tabp<cr>", opts)
 
 -- copy everything between { and } including the brackets
 keymap("n", "YY", "va{Vy", opts)

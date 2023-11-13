@@ -92,17 +92,6 @@ function M.config()
       q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     },
-
-    t = {
-      name = "Tab",
-      t = {
-        "<cmd>lua require('telescope').extensions['telescope-tabs'].list_tabs(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Tabs'})<cr>",
-        "Find Tab",
-      },
-      n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
-      N = { "<cmd>tabnew %<cr>", "New Tab" },
-    },
-
     T = {
       name = "Treesitter",
       i = { ":TSConfigInfo<cr>", "Info" },
