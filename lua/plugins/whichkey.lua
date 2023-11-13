@@ -7,7 +7,7 @@ function M.config()
   local mappings = {
     ["q"] = { "<cmd>confirm q<CR>", "Quit" },
     ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+    ["w"] = { "<cmd>w!<CR>", "Save" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
     b = {
@@ -50,6 +50,16 @@ function M.config()
       l = { "<cmd>Lazy log<cr>", "Log" },
       d = { "<cmd>Lazy debug<cr>", "Debug" },
     },
+    j = {
+      name = "JavaScript",
+      s = { '<cmd>lua require("package-info").show()<cr>', "Show package info" },
+      h = { '<cmd>lua require("package-info").hide()<cr>', "Hide package info" },
+      t = { '<cmd>lua require("package-info").toggle()<cr>', "Toggle package info" },
+      u = { '<cmd>lua require("package-info").update()<cr>', "Update package" },
+      d = { '<cmd>lua require("package-info").delete()<cr>', "Delete package" },
+      i = { '<cmd>lua require("package-info").install()<cr>', "Install package" },
+      v = { '<cmd>lua require("package-info").change_version()<cr>', "Change Version" },
+    },
 
     f = {
       name = "Find",
@@ -58,9 +68,7 @@ function M.config()
       s = { "<cmd>Telescope grep_string<cr>", "Find String" },
       h = { "<cmd>Telescope help_tags<cr>", "Help" },
       H = { "<cmd>Telescope highlights<cr>", "Highlights" },
-      l = { "<cmd>Telescope resume<cr>", "Last Search" },
       M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-      r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
       R = { "<cmd>Telescope registers<cr>", "Registers" },
       k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
       C = { "<cmd>Telescope commands<cr>", "Commands" },
@@ -80,14 +88,6 @@ function M.config()
       f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>Mason<cr>", "Mason Info" },
-      j = {
-        "<cmd>lua vim.diagnostic.goto_next()<cr>",
-        "Next Diagnostic",
-      },
-      k = {
-        "<cmd>lua vim.diagnostic.goto_prev()<cr>",
-        "Prev Diagnostic",
-      },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
       q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
       e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },

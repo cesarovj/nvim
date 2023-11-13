@@ -14,7 +14,7 @@ function M.config()
       mode = 'auto'
     },
     border = {
-      enable = false,
+      enable = true,
       top_char = "─",
       bottom_char = "─",
     }

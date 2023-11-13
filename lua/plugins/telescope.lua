@@ -52,19 +52,19 @@ function M.config()
     },
     pickers = {
       find_files = {
-        file_ignore_patterns = { "assets" },
+        file_ignore_patterns = { "assets",  "node_modules", "package-lock.json", ".git/"  },
         hidden               = true,
         layout_strategy      = 'horizontal',
         layout_config        = {
           horizontal = {
-            width = 0.6,
-            height = 0.6,
+            width = 0.7,
+            height = 0.7,
             preview_width = 0.6,
           },
         },
       },
       git_files = {
-        file_ignore_patterns = { "assets" },
+        file_ignore_patterns = { "assets",  "node_modules", "package-lock.json", ".git/" },
         hidden               = true,
         show_untracked       = true,
       },
