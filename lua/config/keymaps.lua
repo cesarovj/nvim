@@ -8,12 +8,8 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
--- Better window navigation
-keymap("n", "<m-h>", "<C-w>h", opts)
-keymap("n", "<m-j>", "<C-w>j", opts)
-keymap("n", "<m-k>", "<C-w>k", opts)
-keymap("n", "<m-l>", "<C-w>l", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
+-- Navigate to NvimTree
+keymap("n", "<S-Tab>",  "<C-w>h", opts)
 
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
@@ -22,13 +18,24 @@ keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)
 keymap("n", "g#", "g#zz", opts)
 
+-- Move to start/end of line 
+keymap({"n", "x", "o"}, "H", '^', opts)
+keymap({"n", "x", "o"}, "L", '$', opts)
+
 -- Map enter to ciw in normal mode
 keymap("n", "<CR>", "ciw", opts)
 keymap("n", "<BS>", "ci", opts)
 
--- switch between tabs
--- keymap("n", "<S-l>", "<cmd>tabn<cr>", opts)
--- keymap("n", "<S-h>", "<cmd>tabp<cr>", opts)
+-- Keep cursor centered when scrolling
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- Navigate buffers
+keymap("n", "<Right>", ":bnext<CR>", opts)
+keymap("n", "<Left>", ":bprevious<CR>", opts)
+
+-- Select all
+keymap('n', '<C-a>', 'ggVG', opts)
 
 -- copy everything between { and } including the brackets
 keymap("n", "YY", "va{Vy", opts)
@@ -48,7 +55,6 @@ keymap("x", "p", [["_dP]])
 
 vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
 vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
--- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
 vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")

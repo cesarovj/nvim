@@ -75,10 +75,16 @@ function M.config()
       t = { "<cmd>TodoTelescope<cr>", "Todo" },
       T = { "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme" },
     },
-
+  s = {
+      name = "Spectre",
+      s = { "<cmd>lua require('spectre').toggle()<cr>", "Toggle Spectre" },
+      w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search current word" },
+      f = { "<cmd>lua require('spectre').open_file_search({select_word=true})<cr>", "Search on current file" },
+    },
     g = {
       name = "Git",
       g = { "<cmd>lua require('config.utils').lazygit_toggle()<cr>", "Lazygit" },
+      c = { "<cmd>lua require('config.utils').copyFilePathAndLineNumber()<CR>", "Copy File Path and Line Number" }
     },
     l = {
       name = "LSP",

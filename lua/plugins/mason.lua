@@ -14,6 +14,7 @@ M.servers = {
   "jsonls",
   "marksman",
   "tailwindcss",
+  "eslint",
 }
 
 function M.config()

@@ -54,6 +54,7 @@ function M.config()
     "jsonls",
     "marksman",
     "tailwindcss",
+    "eslint",
   }
 
   local default_diagnostic_config = {

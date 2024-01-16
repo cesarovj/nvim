@@ -32,23 +32,13 @@ function M.config()
       disable = { "markdown" },
       additional_vim_regex_highlighting = false,
     },
-
     indent = { enable = true },
-
     matchup = {
       enable = {},
       disable = { "lua" },
     },
-
     autotag = { enable = true },
-
-    context_commentstring = {
-      enable = true,
-      enable_autocmd = false,
-    },
-
     autopairs = { enable = true },
-
     textobjects = {
       select = {
         enable = true,

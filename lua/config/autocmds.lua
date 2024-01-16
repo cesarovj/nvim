@@ -63,8 +63,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd('ColorScheme', {
   callback = function()
     -- change the background color of floating windows and borders.
-    vim.cmd('highlight NormalFloat guibg=none guifg=none')
-    vim.cmd('highlight FloatBorder guifg=' .. "#76787d" .. ' guibg=none')
-    vim.cmd('highlight NormalNC guibg=none guifg=none')
+    -- vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+    vim.api.nvim_set_hl(0, "LspInfoBorder", { link = "Normal" })
+    -- vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
   end,
 })
