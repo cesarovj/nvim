@@ -80,7 +80,6 @@ background = {
           illuminate = { enabled = true },
           native_lsp = { enabled = true, inlay_hints = { background = true } },
           neogit = true,
-          nvimtree = true,
           semantic_tokens = true,
           treesitter = true,
           treesitter_context = true,

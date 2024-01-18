@@ -8,6 +8,10 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-Space>", "<cmd>WhichKey \\<space><cr>", opts)
 keymap("n", "<C-i>", "<C-i>", opts)
 
+-- Fast saving
+keymap("n", "<Leader>w", ":write!<CR>", opts)
+keymap("n", "<Leader>q", ":q!<CR>", opts)
+
 -- Navigate to NvimTree
 keymap("n", "<S-Tab>",  "<C-w>h", opts)
 
