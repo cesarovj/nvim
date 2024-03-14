@@ -10,6 +10,9 @@ function M.config()
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+    t = {
+      name = "Test"
+    },
     b = {
       name = "Buffers",
       b = { "<cmd>Telescope buffers previewer=false<cr>", "Search Buffers" },
@@ -22,23 +25,6 @@ function M.config()
         "Pick which buffer to close",
       },
     },
-    -- d = {
-    --   name = "Debug",
-    --   t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
-    --   b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
-    --   c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
-    --   C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-    --   d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-    --   g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-    --   i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
-    --   o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
-    --   u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
-    --   p = { "<cmd>lua require'dap'.pause()<cr>", "Pause" },
-    --   r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-    --   s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-    --   q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
-    --   U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
-    -- },
     p = {
       name = "Plugins",
       i = { "<cmd>Lazy install<cr>", "Install" },
@@ -72,9 +58,8 @@ function M.config()
       R = { "<cmd>Telescope registers<cr>", "Registers" },
       k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
       C = { "<cmd>Telescope commands<cr>", "Commands" },
-      t = { "<cmd>TodoTelescope<cr>", "Todo" },
     },
-  s = {
+    s = {
       name = "Spectre",
       s = { "<cmd>lua require('spectre').toggle()<cr>", "Toggle Spectre" },
       w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search Current Word" },
@@ -88,15 +73,15 @@ function M.config()
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      b = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
       w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
       f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>Mason<cr>", "Mason Info" },
     },
-    T = {
-      name = "Treesitter",
-      i = { ":TSConfigInfo<cr>", "Info" },
+    c = {
+      name = "Cellular Automaton",
+      m = { "<cmd>CellularAutomaton make_it_rain<CR>", "Make It Rain" },
+      g = { "<cmd>CellularAutomaton game_of_life<CR>", "Game of Life" },
     },
   }
 

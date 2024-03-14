@@ -3,31 +3,31 @@ local M = {
   dependencies = {
     {
       "hrsh7th/cmp-nvim-lsp",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "hrsh7th/cmp-emoji",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "hrsh7th/cmp-buffer",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "hrsh7th/cmp-path",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "hrsh7th/cmp-cmdline",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "saadparwaiz1/cmp_luasnip",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
     },
     {
       "L3MON4D3/LuaSnip",
-      event = "InsertEnter",
+      -- event = "InsertEnter",
       dependencies = {
         "rafamadriz/friendly-snippets",
       },
