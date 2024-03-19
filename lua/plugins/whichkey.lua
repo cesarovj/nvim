@@ -15,7 +15,7 @@ function M.config()
     },
     b = {
       name = "Buffers",
-      b = { "<cmd>Telescope buffers previewer=false<cr>", "Search Buffers" },
+      b = { "<cmd>Telescope buffers<cr>", "Search Buffers" },
       c = {
         ":lua require('bufdelete').bufdelete(0, false)<cr>",
         "Close Buffer",
@@ -54,8 +54,6 @@ function M.config()
       s = { "<cmd>Telescope grep_string<cr>", "Find String" },
       h = { "<cmd>Telescope help_tags<cr>", "Help" },
       H = { "<cmd>Telescope highlights<cr>", "Highlights" },
-      M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-      R = { "<cmd>Telescope registers<cr>", "Registers" },
       k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
       C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
@@ -73,7 +71,7 @@ function M.config()
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
+      w = { "<cmd>Telescope diagnostics theme=dropdown<cr>", "Diagnostics" },
       f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
       i = { "<cmd>LspInfo<cr>", "Info" },
       I = { "<cmd>Mason<cr>", "Mason Info" },

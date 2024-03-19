@@ -52,7 +52,8 @@ function M.config()
     },
     pickers = {
       find_files = {
-        file_ignore_patterns = { "assets",  "node_modules", "package-lock.json", ".git/"  },
+        preview_title        = "",
+        file_ignore_patterns = { "assets", "node_modules", "package-lock.json", ".git/" },
         hidden               = true,
         layout_strategy      = 'horizontal',
         layout_config        = {
@@ -64,13 +65,14 @@ function M.config()
         },
       },
       git_files = {
-        file_ignore_patterns = { "assets",  "node_modules", "package-lock.json", ".git/" },
+        file_ignore_patterns = { "assets", "node_modules", "package-lock.json", ".git/" },
         hidden               = true,
         show_untracked       = true,
       },
       live_grep = {
         --@usage don't include the filename in the search results
         only_sort_text = true,
+        preview_title  = "",
         theme          = 'dropdown',
         layout_config  = {
           vertical = {
@@ -81,6 +83,7 @@ function M.config()
         },
       },
       grep_string = {
+        preview_title  = "",
         theme          = 'dropdown',
         only_sort_text = true,
         layout_config  = {
@@ -93,10 +96,15 @@ function M.config()
       },
 
       buffers = {
-        theme = "dropdown",
-        previewer = false,
-        initial_mode = "normal",
-        mappings = {
+        results_title = "",
+        theme         = "ivy",
+        previewer     = false,
+        layout_config = {
+          height = 0.2
+        },
+
+        initial_mode  = "normal",
+        mappings      = {
           i = {
             ["<C-d>"] = actions.delete_buffer,
           },

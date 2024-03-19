@@ -1,6 +1,7 @@
 local M = {
   "nvim-neotest/neotest",
   dependencies = {
+    "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     "nvim-neotest/neotest-jest"
@@ -12,10 +13,13 @@ function M.config()
   wk.register {
     ["<leader>tn"] = { "<cmd>lua require('neotest').run.run()<cr>", "Test Nearest" },
     ["<leader>tf"] = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>", "Test File" },
+    ["<leader>tT"] = { "<cmd>lua require('neotest').run.run(vim.loop.cwd())<cr>", "Test All Files" },
     ["<leader>ts"] = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop Test" },
     ["<leader>tS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Toggle Summary" },
     ["<leader>to"] = { "<cmd>lua require('neotest').output.open({ enter = true, auto_close = true })<cr>", "Show Output" },
     ["<leader>tO"] = { "<cmd>lua require('neotest').output_panel.toggle()<cr>", "Toggle Output Panel" },
+    ["<leader>tw"] = { "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>", "Test Watch" },
+    ["<leader>tc"] = { "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --coverage ' })<cr>", "Test Coverage" },
   }
 
   -- get neotest namespace (api call creates or returns namespace)
@@ -34,7 +38,14 @@ function M.config()
   require("neotest").setup {
     -- your neotest config here
     adapters = {
-      require('neotest-jest'),
+      require('neotest-jest')({
+        jestCommand = "npm test --",
+        jestConfigFile = "custom.jest.config.ts",
+        env = { CI = true },
+        cwd = function(path)
+          return vim.fn.getcwd()
+        end,
+      }),
     },
     icons = {
       child_indent = "│",

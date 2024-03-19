@@ -25,7 +25,7 @@ local M = {
 function M.config()
   require("notify").setup {
        background_colour = "#000000",
-       render = "minimal"
+       render = "wrapped-compact",
      }
   require("noice").setup {
     lsp = {
